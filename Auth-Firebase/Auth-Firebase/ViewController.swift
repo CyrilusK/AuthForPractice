@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginField: UITextField!
@@ -38,6 +38,15 @@ class ViewController: UIViewController {
             passwordField.isSecureTextEntry = true
         }
     }
-
+    
+    @IBAction func pressedBtnEnter(_ sender: UIButton) {
+    }
+    
+    @IBAction func pressedBtnBiometry(_ sender: UIButton) {
+    }
+    
+    @IBAction func pressedBtnGoogle(_ sender: UIButton) {
+    }
+    
 }
 
