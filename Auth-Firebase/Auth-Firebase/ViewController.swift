@@ -84,10 +84,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let device = Device.current
          
         if device.isOneOf(arrModelsSupportFaceid) {
-            btnBiometry.setBackgroundImage(UIImage(systemName: "faceid"), for: .normal)
+            btnBiometry.configuration?.background.image = UIImage(systemName: "faceid")
+            btnBiometry.configuration?.background.imageContentMode = .scaleAspectFit
+            
         }
         else if device.isOneOf(arrModelsSupportTouchid) {
-            btnBiometry.setBackgroundImage(UIImage(systemName: "touchid"), for: .normal)
+            btnBiometry.configuration?.background.image = UIImage(systemName: "touchid")
+            btnBiometry.configuration?.background.imageContentMode = .scaleAspectFit
         }
     }
 
@@ -125,9 +128,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func pressedBtnBiometry(_ sender: UIButton) {
+        //print("biometry")
     }
     
     @IBAction func pressedBtnGoogle(_ sender: UIButton) {
+        //print("google")
     }
     
 }
