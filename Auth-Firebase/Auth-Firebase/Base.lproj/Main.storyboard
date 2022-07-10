@@ -34,7 +34,7 @@
                                                         <color key="tintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="username"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -131,9 +131,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBiometry" destination="mrg-Vj-tof" id="fd9-Zc-p9o"/>
                         <outlet property="loginField" destination="Ewj-NB-I3y" id="geo-Yt-fju"/>
                         <outlet property="passwordField" destination="A5o-3t-XeI" id="e6M-4n-JVt"/>
-                        <segue destination="FsP-BB-VLt" kind="presentation" identifier="goToNotes" id="3de-Mt-guD"/>
+                        <segue destination="FsP-BB-VLt" kind="presentation" identifier="goToNotes" modalPresentationStyle="fullScreen" id="Txb-WS-Qc0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -145,11 +146,12 @@
             <objects>
                 <viewController id="FsP-BB-VLt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FPE-Mg-FT5">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="2pu-ei-sVc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pkb-gC-8Em"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hec-6Y-Lu6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
