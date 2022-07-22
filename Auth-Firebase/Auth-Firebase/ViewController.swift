@@ -106,7 +106,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
-        if passwordField.isTouchInside && !passwordField.text!.isEmpty {
+        if passwordField.isTouchInside && !passwordField.text!.isEmpty && !loginField.text!.isEmpty {
             self.performSegue(withIdentifier: "goToNotes", sender: self)
         }
         return true

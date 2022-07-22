@@ -143,33 +143,46 @@
             </objects>
             <point key="canvasLocation" x="65" y="92"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="qA7-hE-ChN">
             <objects>
-                <viewController id="FsP-BB-VLt" sceneMemberID="viewController">
+                <viewController id="FsP-BB-VLt" customClass="ResultViewController" customModule="Auth_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FPE-Mg-FT5">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhU-aF-Kec">
+                                <rect key="frame" x="329" y="44" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="rectangle.portrait.and.arrow.right" catalog="system" cornerStyle="medium">
+                                    <backgroundConfiguration key="background"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="pressedBtnExit:" destination="FsP-BB-VLt" eventType="touchUpInside" id="oex-kR-DkB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2pu-ei-sVc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.62745098040000002" green="0.90588235289999997" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="pkb-gC-8Em"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hec-6Y-Lu6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="92"/>
+            <point key="canvasLocation" x="804.61538461538464" y="91.706161137440759"/>
         </scene>
     </scenes>
     <resources>
         <image name="faceid" catalog="system" width="128" height="115"/>
         <image name="logo" width="103.19999694824219" height="17.040000915527344"/>
         <image name="logoGoogle" width="24" height="24"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <image name="touchid" catalog="system" width="128" height="122"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

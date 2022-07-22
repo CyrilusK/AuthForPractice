@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5761A72288AD8C10065A8E1 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5761A71288AD8C10065A8E1 /* ResultViewController.swift */; };
 		A583E416287B29B200986E00 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = A583E415287B29B200986E00 /* DeviceKit */; };
 		A596AB3E28789DD80036416E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB3D28789DD80036416E /* AppDelegate.swift */; };
 		A596AB4028789DD80036416E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB3F28789DD80036416E /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5761A71288AD8C10065A8E1 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A596AB3A28789DD80036416E /* Auth-Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth-Firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A596AB3D28789DD80036416E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A596AB3F28789DD80036416E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				A596AB3D28789DD80036416E /* AppDelegate.swift */,
 				A596AB3F28789DD80036416E /* SceneDelegate.swift */,
 				A596AB4128789DD80036416E /* ViewController.swift */,
+				A5761A71288AD8C10065A8E1 /* ResultViewController.swift */,
 				A596AB4328789DD80036416E /* Main.storyboard */,
 				A596AB4928789DDA0036416E /* Assets.xcassets */,
 				A596AB4B28789DDA0036416E /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5761A72288AD8C10065A8E1 /* ResultViewController.swift in Sources */,
 				A596AB4828789DD80036416E /* Auth_Firebase.xcdatamodeld in Sources */,
 				A596AB4228789DD80036416E /* ViewController.swift in Sources */,
 				A596AB3E28789DD80036416E /* AppDelegate.swift in Sources */,
