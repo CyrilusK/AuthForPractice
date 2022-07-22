@@ -1,5 +1,6 @@
 import UIKit
 import DeviceKit
+import FirebaseAuth
 
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -104,16 +105,65 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
-        if passwordField.isTouchInside && !passwordField.text!.isEmpty && !loginField.text!.isEmpty {
-            self.performSegue(withIdentifier: "goToNotes", sender: self)
+        if passwordField.isTouchInside, let login = loginField.text, !loginField.text!.isEmpty,
+            let password = passwordField.text, !passwordField.text!.isEmpty  {
+            Auth.auth().signIn(withEmail: login, password: password, completion: {
+                result, error in
+                guard error == nil else {
+                    if let err = AuthErrorCode.Code(rawValue: error!._code) {
+                        switch err {
+                        case .userNotFound:
+                            self.showCreateAccount(email: login, password: password)
+                        case .invalidEmail:
+                            self.showAlert(message: "При входе в систему указаны неверные email и/или пароль")
+                        case .wrongPassword:
+                            self.showAlert(message: "При входе в систему указаны неверные email и/или пароль")
+                        default:
+                            self.showAlert(message: "Unexpected error: \(err.rawValue)")
+                        }
+                    }
+                    return
+                }
+                self.performSegue(withIdentifier: "goToNotes", sender: self)
+                self.loginField.text?.removeAll()
+                self.passwordField.text?.removeAll()
+            })
+        }
+        else {
+            print("Отсутствуют необходимые данные для входа")
         }
         return true
     }
     
+    func showCreateAccount(email: String, password: String) {
+        let alert = UIAlertController(title: "Создать аккаунт", message: "Хотели ли бы Вы создать аккаунт?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Создать", style: .default, handler: { _ in
+            
+            Auth.auth().createUser(withEmail: email, password: password, completion: {
+                result, error in
+                guard error == nil else {
+                    self.showAlert(message: (error?.localizedDescription)!)
+                    print("Не удалось создать аккаунт")
+                    return
+                }
+            })
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { _ in
+        }))
+        present(alert, animated: true)
+    }
+    
     @IBAction func pressedBtnEnter(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToNotes", sender: self)
+        textFieldShouldReturn(passwordField)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
