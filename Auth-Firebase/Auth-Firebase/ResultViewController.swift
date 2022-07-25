@@ -1,12 +1,14 @@
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class ResultViewController: UIViewController {
     
     @IBAction func pressedBtnExit(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
         do {
             try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+            print("log out")
         } catch let signOutError as NSError {
         self.showAlert(message: signOutError.localizedDescription)
         }

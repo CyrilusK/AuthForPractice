@@ -8,15 +8,37 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    public var signInConfig: GIDConfiguration?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
+        
+        if let clientId = FirebaseApp.app()?.options.clientID {
+                    signInConfig = GIDConfiguration.init(clientID: clientId)
+                }
+        
         return true
     }
+    
+    func application(
+      _ app: UIApplication,
+      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+      var handled: Bool
+
+      handled = GIDSignIn.sharedInstance.handle(url)
+      if handled {
+        return true
+      }
+      return false
+    }
+
 
     // MARK: UISceneSession Lifecycle
 
