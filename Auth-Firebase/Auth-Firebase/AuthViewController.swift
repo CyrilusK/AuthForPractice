@@ -3,6 +3,7 @@ import DeviceKit
 import FirebaseAuth
 import GoogleSignIn
 import Firebase
+import LocalAuthentication
 
 
 class AuthViewController: UIViewController, UITextFieldDelegate {
@@ -190,6 +191,23 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func pressedBtnBiometry(_ sender: UIButton) {
+        let context = LAContext()
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate to proceed.") {
+                (succes, error) in
+                if succes {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "goToNotes", sender: self)
+                    }
+                }
+                else {
+                    guard let error = error else {
+                        return
+                    }
+                    print(error.localizedDescription)
+                }
+            }
+        }
         //print("biometry")
     }
     
