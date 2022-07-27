@@ -1,5 +1,4 @@
 import UIKit
-import DeviceKit
 import FirebaseAuth
 import GoogleSignIn
 import Firebase
@@ -15,7 +14,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     var btnEye = UIButton(type: .custom)
     var btnMail = UIButton(type: .custom)
     var btnLock = UIButton(type: .custom)
-    let curDevice = Device.current
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,68 +38,20 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         loginField.leftViewMode = .always
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            
-        }
-    }
+    
     
     func setImageForBtnBiometry() -> Void {
-        let arrModelsSupportFaceid: [Device] = [.iPhone13ProMax,
-                                                .iPhone13Pro,
-                                                .iPhone13Mini,
-                                                .iPhone13,
-                                                .iPhone12ProMax,
-                                                .iPhone12Pro,
-                                                .iPhone12Mini,
-                                                .iPhone12,
-                                                .iPhone11ProMax,
-                                                .iPhone11Pro,
-                                                .iPhone11,
-                                                .iPhoneXSMax,
-                                                .iPhoneXS,
-                                                .iPhoneXR,
-                                                .iPhoneX,
-                                                .simulator(.iPhone13ProMax),
-                                                .simulator(.iPhone13Pro),
-                                                .simulator(.iPhone13Mini),
-                                                .simulator(.iPhone13),
-                                                .simulator(.iPhone12ProMax),
-                                                .simulator(.iPhone12Pro),
-                                                .simulator(.iPhone12Mini),
-                                                .simulator(.iPhone12),
-                                                .simulator(.iPhone11ProMax),
-                                                .simulator(.iPhone11Pro),
-                                                .simulator(.iPhone11),
-                                                .simulator(.iPhoneXSMax),
-                                                .simulator(.iPhoneXS),
-                                                .simulator(.iPhoneXR),
-                                                .simulator(.iPhoneX),]
-        let arrModelsSupportTouchid: [Device] = [.iPhone6s,
-                                                 .iPhone6sPlus,
-                                                 .iPhone7,
-                                                 .iPhone7Plus,
-                                                 .iPhone8,
-                                                 .iPhone8Plus,
-                                                 .iPhoneSE,
-                                                 .simulator(.iPhone6s),
-                                                 .simulator(.iPhone6sPlus),
-                                                 .simulator(.iPhone7),
-                                                 .simulator(.iPhone7Plus),
-                                                 .simulator(.iPhone8),
-                                                 .simulator(.iPhone8Plus),
-                                                 .simulator(.iPhoneSE) ]
-        let device = Device.current
-         
-        if device.isOneOf(arrModelsSupportFaceid) {
+        let context = LAContext()
+        let _ = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        switch context.biometryType {
+        case .faceID:
             btnBiometry.configuration?.background.image = UIImage(systemName: "faceid")
             btnBiometry.configuration?.background.imageContentMode = .scaleAspectFit
-            
-        }
-        else if device.isOneOf(arrModelsSupportTouchid) {
+        case .touchID:
             btnBiometry.configuration?.background.image = UIImage(systemName: "touchid")
             btnBiometry.configuration?.background.imageContentMode = .scaleAspectFit
+        default:
+            break
         }
     }
 
@@ -208,7 +158,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        //print("biometry")
     }
     
     @IBAction func pressedBtnGoogle(_ sender: UIButton) {

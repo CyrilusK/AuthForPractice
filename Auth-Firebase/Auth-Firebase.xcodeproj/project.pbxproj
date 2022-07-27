@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A54C2F20288B2CB000EF04BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A54C2F1F288B2CB000EF04BB /* GoogleService-Info.plist */; };
 		A5761A72288AD8C10065A8E1 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5761A71288AD8C10065A8E1 /* ResultViewController.swift */; };
-		A583E416287B29B200986E00 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = A583E415287B29B200986E00 /* DeviceKit */; };
 		A596AB3E28789DD80036416E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB3D28789DD80036416E /* AppDelegate.swift */; };
 		A596AB4028789DD80036416E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB3F28789DD80036416E /* SceneDelegate.swift */; };
 		A596AB4228789DD80036416E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB4128789DD80036416E /* AuthViewController.swift */; };
@@ -42,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A583E416287B29B200986E00 /* DeviceKit in Frameworks */,
 				E4402EC93958DCCE860B1134 /* Pods_Auth_Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +119,6 @@
 			);
 			name = "Auth-Firebase";
 			packageProductDependencies = (
-				A583E415287B29B200986E00 /* DeviceKit */,
 			);
 			productName = "Auth-Firebase";
 			productReference = A596AB3A28789DD80036416E /* Auth-Firebase.app */;
@@ -152,7 +149,6 @@
 			);
 			mainGroup = A596AB3128789DD80036416E;
 			packageReferences = (
-				A583E414287B29B200986E00 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = A596AB3B28789DD80036416E /* Products */;
 			projectDirPath = "";
@@ -450,25 +446,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A583E414287B29B200986E00 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A583E415287B29B200986E00 /* DeviceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A583E414287B29B200986E00 /* XCRemoteSwiftPackageReference "DeviceKit" */;
-			productName = DeviceKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A596AB4628789DD80036416E /* Auth_Firebase.xcdatamodeld */ = {
