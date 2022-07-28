@@ -2,7 +2,15 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textView.layer.borderColor = UIColor(named: "colorForBtns")?.cgColor
+        textView.layer.borderWidth = 1
+    }
     
     @IBAction func pressedBtnExit(_ sender: UIButton) {
         do {

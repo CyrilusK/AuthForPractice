@@ -151,9 +151,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhU-aF-Kec">
-                                <rect key="frame" x="329" y="44" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhU-aF-Kec">
+                                <rect key="frame" x="170.66666666666666" y="44" width="49" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="NxK-u0-AkJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="sDj-aX-y3G"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" image="rectangle.portrait.and.arrow.right" catalog="system" cornerStyle="medium">
                                     <backgroundConfiguration key="background"/>
@@ -164,11 +167,29 @@
                                     <action selector="pressedBtnExit:" destination="FsP-BB-VLt" eventType="touchUpInside" id="oex-kR-DkB"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Заметки" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GKj-Z1-9V5">
+                                <rect key="frame" x="20" y="113" width="350" height="697"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2pu-ei-sVc"/>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.90588235289999997" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GKj-Z1-9V5" firstAttribute="bottom" secondItem="2pu-ei-sVc" secondAttribute="bottom" id="5eQ-QW-whg"/>
+                            <constraint firstItem="GKj-Z1-9V5" firstAttribute="leading" secondItem="2pu-ei-sVc" secondAttribute="leading" constant="20" id="8px-4M-ZVq"/>
+                            <constraint firstItem="2pu-ei-sVc" firstAttribute="trailing" secondItem="GKj-Z1-9V5" secondAttribute="trailing" constant="20" id="NQD-aq-MhM"/>
+                            <constraint firstItem="GKj-Z1-9V5" firstAttribute="top" secondItem="AhU-aF-Kec" secondAttribute="bottom" constant="20" id="Nzn-ug-Yhq"/>
+                            <constraint firstItem="AhU-aF-Kec" firstAttribute="centerX" secondItem="FPE-Mg-FT5" secondAttribute="centerX" id="SxS-CH-QxW"/>
+                            <constraint firstItem="AhU-aF-Kec" firstAttribute="top" secondItem="2pu-ei-sVc" secondAttribute="top" id="aQq-eg-pgv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pkb-gC-8Em"/>
+                    <connections>
+                        <outlet property="textView" destination="GKj-Z1-9V5" id="bI3-3k-3Oc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hec-6Y-Lu6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,8 +202,14 @@
         <image name="logoGoogle" width="24" height="24"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <image name="touchid" catalog="system" width="128" height="122"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
