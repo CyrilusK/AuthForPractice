@@ -75,6 +75,13 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         textField.endEditing(true)
         if passwordField.isTouchInside, let login = loginField.text, !loginField.text!.isEmpty,
             let password = passwordField.text, !passwordField.text!.isEmpty  {
+//            let name = UIDevice.current.name
+//            let user = User(name: name, email: login)
+//            do {
+//              try AuthController.signIn(user, password: password)
+//            } catch {
+//              print("Error signing in: \(error.localizedDescription)")
+//            }
             Auth.auth().signIn(withEmail: login, password: password, completion: {
                 result, error in
                 guard error == nil else {

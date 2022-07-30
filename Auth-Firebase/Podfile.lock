@@ -5,6 +5,7 @@ PODS:
   - AppAuth/Core (1.5.0)
   - AppAuth/ExternalUserAgent (1.5.0):
     - AppAuth/Core
+  - CryptoSwift (1.5.1)
   - Firebase/Auth (9.3.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 9.3.0)
@@ -112,6 +113,7 @@ PODS:
   - PromisesObjC (2.1.1)
 
 DEPENDENCIES:
+  - CryptoSwift
   - Firebase/Auth
   - Firebase/Core
   - GoogleSignIn
@@ -119,6 +121,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
+    - CryptoSwift
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -137,6 +140,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
   Firebase: ef75abb1cdbc746d5a38f4e26c422c807b189b8c
   FirebaseAnalytics: bf46f5163f44097ce2c789de0b3e6f87f1da834a
   FirebaseAuth: 9ebc3577fe0acf9092df21ac314024b70aebf21e
@@ -153,6 +157,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: 631332fe23ce2fb72d000367cc383b1147c48468
+PODFILE CHECKSUM: 1e44c28029d3e96d0602858e0d87f5568d7d1207
 
 COCOAPODS: 1.11.3

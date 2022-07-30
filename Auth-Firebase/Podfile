@@ -7,6 +7,7 @@ target 'Auth-Firebase' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod 'GoogleSignIn' 
+pod 'GoogleSignIn'
+pod 'CryptoSwift'
 
 end

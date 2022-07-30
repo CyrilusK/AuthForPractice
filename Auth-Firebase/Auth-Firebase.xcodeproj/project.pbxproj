@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A54C2F20288B2CB000EF04BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A54C2F1F288B2CB000EF04BB /* GoogleService-Info.plist */; };
 		A5761A72288AD8C10065A8E1 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5761A71288AD8C10065A8E1 /* ResultViewController.swift */; };
+		A576FD5328952FFA003F7871 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576FD5228952FFA003F7871 /* KeychainPasswordItem.swift */; };
+		A576FD58289539FD003F7871 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576FD57289539FD003F7871 /* User.swift */; };
+		A576FD5A28953B99003F7871 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576FD5928953B99003F7871 /* AuthController.swift */; };
+		A576FD6028954688003F7871 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A576FD5F28954688003F7871 /* Settings.swift */; };
 		A596AB3E28789DD80036416E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB3D28789DD80036416E /* AppDelegate.swift */; };
 		A596AB4028789DD80036416E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB3F28789DD80036416E /* SceneDelegate.swift */; };
 		A596AB4228789DD80036416E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A596AB4128789DD80036416E /* AuthViewController.swift */; };
@@ -22,6 +26,11 @@
 /* Begin PBXFileReference section */
 		A54C2F1F288B2CB000EF04BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5761A71288AD8C10065A8E1 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		A576FD5228952FFA003F7871 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		A576FD57289539FD003F7871 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A576FD5928953B99003F7871 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		A576FD5C28953FF2003F7871 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Resources/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A576FD5F28954688003F7871 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A596AB3A28789DD80036416E /* Auth-Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth-Firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A596AB3D28789DD80036416E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A596AB3F28789DD80036416E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +74,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A576FD562895310A003F7871 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A576FD5228952FFA003F7871 /* KeychainPasswordItem.swift */,
+				A576FD5F28954688003F7871 /* Settings.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A576FD5D2895400E003F7871 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A576FD57289539FD003F7871 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A576FD5E28954017003F7871 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A596AB4328789DD80036416E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A596AB3128789DD80036416E = {
 			isa = PBXGroup;
 			children = (
@@ -88,13 +122,17 @@
 			children = (
 				A596AB3D28789DD80036416E /* AppDelegate.swift */,
 				A596AB3F28789DD80036416E /* SceneDelegate.swift */,
+				A576FD562895310A003F7871 /* Helper */,
 				A596AB4128789DD80036416E /* AuthViewController.swift */,
 				A5761A71288AD8C10065A8E1 /* ResultViewController.swift */,
-				A596AB4328789DD80036416E /* Main.storyboard */,
+				A576FD5928953B99003F7871 /* AuthController.swift */,
+				A576FD5E28954017003F7871 /* View */,
+				A576FD5D2895400E003F7871 /* Model */,
+				A596AB4628789DD80036416E /* Auth_Firebase.xcdatamodeld */,
 				A596AB4928789DDA0036416E /* Assets.xcassets */,
 				A596AB4B28789DDA0036416E /* LaunchScreen.storyboard */,
+				A576FD5C28953FF2003F7871 /* GoogleService-Info.plist */,
 				A596AB4E28789DDA0036416E /* Info.plist */,
-				A596AB4628789DD80036416E /* Auth_Firebase.xcdatamodeld */,
 				A54C2F1F288B2CB000EF04BB /* GoogleService-Info.plist */,
 			);
 			path = "Auth-Firebase";
@@ -224,7 +262,11 @@
 				A596AB4828789DD80036416E /* Auth_Firebase.xcdatamodeld in Sources */,
 				A596AB4228789DD80036416E /* AuthViewController.swift in Sources */,
 				A596AB3E28789DD80036416E /* AppDelegate.swift in Sources */,
+				A576FD5A28953B99003F7871 /* AuthController.swift in Sources */,
+				A576FD58289539FD003F7871 /* User.swift in Sources */,
+				A576FD6028954688003F7871 /* Settings.swift in Sources */,
 				A596AB4028789DD80036416E /* SceneDelegate.swift in Sources */,
+				A576FD5328952FFA003F7871 /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

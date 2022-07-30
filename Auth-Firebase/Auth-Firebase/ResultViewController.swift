@@ -14,6 +14,7 @@ class ResultViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func pressedBtnExit(_ sender: UIButton) {
         do {
+            //try? AuthController.signOut()
             try Auth.auth().signOut()
             self.dismiss(animated: true, completion: nil)
             print("log out")
