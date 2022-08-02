@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Auth-Firebase
-//
-//  Created by Кирилл Кардаш on 08.07.2022.
-//
-
 import UIKit
 import CoreData
 import Firebase

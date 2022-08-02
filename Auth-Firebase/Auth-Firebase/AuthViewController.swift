@@ -3,6 +3,7 @@ import FirebaseAuth
 import GoogleSignIn
 import Firebase
 import LocalAuthentication
+import CryptoSwift
 
 
 class AuthViewController: UIViewController, UITextFieldDelegate {
@@ -71,17 +72,26 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true)
     }
     
+    func passwordHash(from email: String, password: String) -> String {
+      let salt = "x567vV8bGgqfjkhggCoyXFQj+(o.nUNQhV67ND"
+      return "\(password).\(email).\(salt)".sha256()
+    }
+    
+    func signIn(email: String, password: String) throws {
+      let serviceName = "Auth-Firebase"
+      let finalHash = passwordHash(from: email, password: password)
+      try KeychainPasswordItem(service: serviceName, account: email).savePassword(finalHash)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         if passwordField.isTouchInside, let login = loginField.text, !loginField.text!.isEmpty,
             let password = passwordField.text, !passwordField.text!.isEmpty  {
-//            let name = UIDevice.current.name
-//            let user = User(name: name, email: login)
-//            do {
-//              try AuthController.signIn(user, password: password)
-//            } catch {
-//              print("Error signing in: \(error.localizedDescription)")
-//            }
+            do {
+                try self.signIn(email: login, password: password)
+            } catch {
+              print("Error signing in: \(error.localizedDescription)")
+            }
             Auth.auth().signIn(withEmail: login, password: password, completion: {
                 result, error in
                 guard error == nil else {
